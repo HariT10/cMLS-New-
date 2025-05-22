@@ -1,0 +1,462 @@
+/* General Layout */
+body {
+    font-family: Avenir, Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #111;
+    line-height: 1.6;
+  }
+  
+
+  .main-header {
+    background-color: #F5FFFA;
+    padding: 0; /* remove vertical padding */
+    height: 100px; /* fixed header height */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+  
+  .left-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .header-logo {
+    height: 230px; /* increase for bigger logo */
+    max-height: 100%; /* keep it within header height */
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .site-tagline {
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFAF0;
+    white-space: nowrap;
+    line-height: 1; /* fix vertical spacing */
+  }
+  
+  
+  
+  .nav-list {
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-list li {
+    position: relative; /* Needed for dropdown to anchor */
+  }
+  
+  .nav-list li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 10px 15px;
+    display: block;
+  }
+  
+  /* Hide dropdown menu by default */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 999;
+  }
+  
+  /* Show when hovering over the parent li */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Dropdown item styling */
+  .dropdown-menu li {
+    width: 100%;
+  }
+  
+  .dropdown-menu li a {
+    padding: 10px 15px;
+    color: #000;
+    transition: background 0.2s;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  
+  /* Centered Header Section with Logo */
+  .tHeader {
+    text-align: left;
+    padding: 40px 60px;
+  }
+  
+  .tHeader h1 {
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+    gap: 15px;
+  }
+  
+  .tHeader img {
+    height: 40px;
+    width: auto;
+  }
+  
+  /* Image Galleries */
+  .tPictures,
+  .nSeasonsPictures,
+  .nGamePictures {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .tPictures img,
+  .nSeasonsPictures img,
+  .nGamePictures img {
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  /* Notable Season + Game Sections */
+  .notableSeason,
+  .notableGame {
+    padding: 40px 60px;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* Notable Players */
+  .vNotablePlayers {
+    text-align: center;
+    padding: 40px 60px;
+    background-color: #fefefe;
+  }
+  
+  .vNotablePlayers h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  /* Player Cards */
+  .player1, .player2, .player3, .player4 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 60px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  }
+  
+  .player1 img,
+  .player2 img,
+  .player3 img,
+  .player4 img {
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .player1 ul,
+  .player2 ul,
+  .player3 ul,
+  .player4 ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 16px;
+  }
+  
+  .player1 li,
+  .player2 li,
+  .player3 li,
+  .player4 li {
+    margin-bottom: 10px;
+  }
+  
+  /* Player Names */
+  .p1Name h1,
+  .p2Name h1,
+  .p3Name h1,
+  .p4Name h1 {
+    font-size: 24px;
+    margin-left: 60px;
+    margin-top: 40px;
+  }
+  
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+/* General Footer Styling */
+.footer {
+    margin-top: 100px;
+    height: auto; /* Allow content to dictate height */
+    padding: 20px 16px; /* Add padding for spacing */
+    background: #FFFAF0; /* Light beige background */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    border-top: 2px solid #e0e0e0; /* Add a subtle border on top */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  }
+  
+  /* Footer Heading */
+  .footer h1 {
+    color: black;
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+    font-size: 24px; /* Adjust font size */
+    text-align: center; /* Center text */
+    margin-bottom: 10px; /* Space below heading */
+    letter-spacing: 1px; /* Add letter spacing */
+  }
+  
+  /* Footer Text */
+  .footer p {
+    color: black;
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+    font-size: 16px; /* Adjust font size */
+    text-align: center; /* Center text */
+    margin: 0; /* Remove extra spacing */
+    letter-spacing: 0.5px; /* Add subtle spacing */
+  }
+  
+  /* Footer Links */
+  .footer-contact a {
+    color: black; /* Match link color with text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .footer-contact a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  /* Footer Logo */
+  .footer-logo {
+    width: 170px; /* Adjust based on your logo size */
+    margin-bottom: 10px; /* Space below logo */
+  }
+  
+  /* Contact Section */
+  .footer-contact {
+    margin-top: 10px; /* Space between sections */
+    text-align: center; /* Center text */
+  }
+
+
+  .hamburger,
+  .mobile-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+  
+  .mobile-nav.open {
+    display: block;
+  }
+
+  .mobile-nav-list a {
+    display: none;
+  }
+
+  
+
+
+  
+  
+
+  
+  /* Media Queries for Mobile Devices */
+  @media (max-width: 768px) {
+
+    .desktop {
+        display: none;
+      }
+    
+      .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+        margin-left: auto;
+      }
+    
+      .mobile-nav {
+        position: absolute;
+        top: 70px; /* just below the header */
+        right: 20px;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        padding: 10px 0;
+        width: 220px;
+        z-index: 999;
+        transition: all 0.3s ease;
+      }
+    
+      .mobile-nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    
+      .mobile-nav-list li {
+        margin: 10px 0;
+      }
+
+      .mobile-nav-list li:last-child {
+        border-bottom: none;
+      }
+      
+    
+      .mobile-nav-list a {
+        display: block;
+        padding: 12px 20px;
+        color: #111;
+        text-decoration: none;
+        font-size: 16px;
+        transition: background 0.3s ease;
+      }
+
+      .mobile-nav-list a:hover {
+        background-color: #f5f5f5;
+        border-radius: 0 8px 8px 0;
+      }
+      
+      /* Optional: slight arrow animation */
+      .dropdown-toggle::after {
+        content: "▾";
+        margin-left: 6px;
+        font-size: 12px;
+      }
+    
+      .mobile-dropdown-menu {
+        display: none;
+        padding-left: 20px;
+      }
+    
+      .mobile-dropdown.open .mobile-dropdown-menu {
+        display: block;
+      }
+    
+      .dropdown-toggle {
+        cursor: pointer;
+      }
+    
+
+    .header-logo{
+        height: 130px;
+    }
+
+  
+    .tHeader,
+    .notableSeason,
+    .notableGame,
+    .vNotablePlayers {
+      padding: 30px 20px;
+    }
+  
+    .tPictures img,
+    .nSeasonsPictures img,
+    .nGamePictures img {
+      width: 90%;
+      max-width: 300px;
+    }
+  
+    .player1,
+    .player2,
+    .player3,
+    .player4 {
+      flex-direction: column;
+      text-align: center;
+      margin: 20px;
+      padding: 20px;
+    }
+  
+    .player1 img,
+    .player2 img,
+    .player3 img,
+    .player4 img {
+      width: 70%;
+      max-width: 220px;
+    }
+  
+    .p1Name h1,
+    .p2Name h1,
+    .p3Name h1,
+    .p4Name h1 {
+      margin-left: 20px;
+      text-align: center;
+    }
+  
+    .player1 ul,
+    .player2 ul,
+    .player3 ul,
+    .player4 ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+  }
+  
+  /* Small screens (phones) */
+  @media (max-width: 480px) {
+    .tHeader h1 {
+      font-size: 26px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-list li a {
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+  
+    .footer {
+      padding: 16px;
+    }
+  
+    .footer h1 {
+      font-size: 20px;
+    }
+  
+    .footer p, .footer a {
+      font-size: 14px;
+    }
+  }
+  

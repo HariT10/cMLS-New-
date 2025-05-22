@@ -1,0 +1,292 @@
+
+<!--this is a declaration, that tells the web browser that this is HTML5-->
+<!DOCTYPE html>
+<!-- TAG to indicate that this is the beggeineg of html document-->
+<html lang="en">
+    
+<html>
+
+<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>cMLS</title>
+        <link rel="stylesheet" href="one.css" >
+    </head>
+
+    
+
+
+<!--TOP MENU-->
+
+<header class="main-header">
+    <div class="header-container">
+      <img src="images/darkREDLogo.png" alt="cMLS Logo" class="header-logo">
+  
+      <nav class="desktop">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Teams ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="one.html">Toronto FC</a></li>
+              <li><a href="two.html">Vancouver Whitecaps</a></li>
+              <li><a href="three.html">CF Montreal</a></li>
+            </ul>
+          </li>
+          <li><a href="search.html">Search Player</a></li>
+          <li><a href="#section4">Contact</a></li>
+        </ul>
+      </nav>
+
+    <!-- Hamburger Toggle Button -->
+    <button class="hamburger" onclick="toggleMobileNav()">
+        ☰
+    </button>
+
+      <!-- Mobile Navigation (hidden by default) -->
+     <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li class="mobile-dropdown">
+            <a href="#" class="dropdown-toggle">Teams <span class="dropdown-arrow">▾</span></a>
+            <ul class="mobile-dropdown-menu">
+              <li><a href="one.html">Toronto FC</a></li>
+              <li><a href="two.html">Vancouver Whitecaps</a></li>
+              <li><a href="three.html">CF Montreal</a></li>
+            </ul>
+          </li>
+          <li><a href="search.html">Search Player</a></li>
+          <li><a href="#section4">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <script>
+    function toggleMobileNav() {
+      const nav = document.querySelector('.mobile-nav');
+      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+    }
+  
+    // Handle dropdown toggle
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        const parent = this.closest('.mobile-dropdown');
+        parent.classList.toggle('open');
+      });
+    });
+  </script>
+  
+  
+
+
+
+
+
+<!--THIS IS FOR THE FIRST BLOCK OF TEXT, 't' stands for Toronto -->
+<div class="tHeader">
+
+    
+    <h1>Toronto FC <img src="images/tfcLogo.png"> </h1>
+
+    <p>Toronto Football Club, or Toronto FC, is a soccer team located in the city of Toronto. Toronto were awarded their first and Canada’s first<br> MLS team in 2005. The team name was created on May 11, 2006. They played their first game in 2007. The team plays their home games<br> at BMO Field, which is located at Exhibition Place near the shoreline. The stadium has a capacity of 30,000. Toronto FC is operated by<br> Maple Leaf Sports & Entertainment (MLSE). MLSE also operated other teams in the city, like the Toronto Maple Leafs (NHL),<br> Toronto Raptors (NBA), and the Toronto Argonauts (CFL).</p>
+
+    
+</div>
+
+<!--The pictures below the first block of text-->
+<div class="tPictures">
+
+    <img src="images/tfcStadium.png">
+    <img src="images/tfirstSeason.png">
+ 
+</div>
+
+
+<!--Notable season-->
+<div class="notableSeason">
+
+    <h1>Notable Season</h1>
+
+    <p>Toronto FC’s most notable season was in 2017. This is because in 2017, they won the domestic treble. They won all three trophies: the<br> MLS Cup, the Supporters' Shield, and the Canadian Championship. They were the first ever team in the MLS to win a treble. At the time,<br> they also set the record for the most points in MLS regular season history. At that time, they also came very close to winning the<br> CONCACAF Champions League. This is basically a tournament including the best teams from North America, Central America, and the<br> Caribbean. Unfortunately, Toronto FC were runners-up as they lost in a penalty shoot-out against Chivas Guadalajara.</p>
+
+</div>
+
+
+<div class="nSeasonsPictures">
+
+    <img src="images/tfcMLSCUP.png">
+    <img src="images/tfcSShield.png">
+    <img src="images/tfcCC.png">
+ 
+</div>
+
+
+<!--Most notable game, I only did this for Toronto FC because they are my favourite team-->
+<div class="notableGame">
+
+    <h1>Notable Game</h1>
+
+    <p>A notable game for me and many others was the second leg of the MLS Conference Finals in 2016. It was the 401 derby, Toronto FC vs<br> Montreal Impact (now called CF Montreal). This was a must-win game for Toronto FC if they wanted to advance to the MLS Cup Finals.<br> This is because they had lost the first leg in Montreal; the score was 3-2. I still remember watching them lose that game, and I was very<br> sad, but there was still hope for the second league in Toronto. I still remember going into that second leg. I was very nervous, as it was a<br> must-win game. They ended up winning 5-2 and 7-5 on aggregate. It was one of the best games I ever watched—the back-and-forth<br> action, the game going to extra time, and beating your rivals.</p>
+
+</div>
+
+<div class="nGamePictures">
+
+    <img src="images/confFinals.png">
+    <img src="images/confFinals2.png">
+ 
+</div>
+
+
+<!--Notable Players-->
+<div class="vNotablePlayers">
+
+    <h1>Notable Players</h1>
+
+    <p>Some Toronto FC Greats! </p>
+
+    
+</div>
+
+<!--Blew is the notable players part of the website-->
+
+<div class="p1Name">
+
+    <h1>Sebastian Giovinco</h1>
+
+</div>
+    
+
+<div class="player1">
+
+    <img src="images/giovinco.png" >
+
+    <div class="list1">
+
+        <ul>
+            <li>83 Total Goals in 142 Appearances for Toronto FC</li>
+            <li>MLS MVP (2015)</a></li>
+            <li>MLS Golden Boot (2015)</li>
+            <li>CONCACAF Champions League Golden Ball (2018)</li>
+            <li>MLS All-Star (2015, 2016, 2017, 2018)</li>
+            <li> MLS Best XI (2015, 2016, 2017)</li>
+            <li>CONCACAF Men's Best XI (2018)</li>
+
+        </ul>
+        
+    </div>
+</div>
+
+
+<div class="p2Name">
+
+    <h1>Jozy Altidore</h1>
+
+</div>
+
+
+<div class="player2">
+
+    <img src="images/altidore.png" >
+
+    <div class="list2">
+
+        <ul>
+            <li>79 Total Goals in 173 Appearances for Toronto FC</a></li>
+            <li>MLS Cup MVP (2017)</li>
+            <li> CONCACAF Gold Cup Best XI (2017)</li>
+            <li> MLS All-Star (2015, 2017)</li>
+            
+        </ul>
+        
+    </div>
+</div>
+
+
+<div class="p3Name">
+
+    <h1>Jonathan Osario</h1>
+
+</div>
+
+
+<div class="player3">
+
+    <img src="images/osario.png" >
+
+    <div class="list3">
+
+        <ul>
+            <li> Most Appearances in Club History with 346 Games</a></li>
+            <li> 63 Total Goals in 346 Games</li>
+            <li> CONCACAF Champions League Golden Boot (2018)</li>
+            <li>CONCACAF Best XI (2018)</li>
+            <li>Current Captain of Toronto FC</li>
+            
+        </ul>
+        
+    </div>
+</div>
+
+
+<div class="p4Name">
+
+    <h1>Michael Bradley</h1>
+
+</div>
+
+
+<div class="player4">
+
+    <img src="images/bradley.png" >
+
+    <div class="list4">
+
+        <ul>
+            <li>Second Most Appearances in Club History with 308 Games</a></li>
+            <li> CONCACAF Men’s Best XI (2015, 2018)</li>
+            <li>U.S Soccer Player of The Year (2015)</li>
+            <li>CONCACAF Gold Cup Golden Ball (2017)</li>
+            <li>CONCACAF Gold Cup Best XI (2017)</li>
+            <li>MLS All-Star (2014, 2015, 2017)</li>
+            
+        </ul>
+        
+    </div>
+</div>
+
+
+
+
+<!--FOOTER-->
+<div class="footer">
+    <img src="images/cMLSLogo.png" alt="Logo" class="footer-logo"> <!-- Optional logo -->
+    
+    <h1>Contact Info</h1>
+    <p>Created By: Harishan Thilakanathan</p>
+    <p>Email: <a href="mailto:harishan.thilak@gmail.com">harishan.thilak@gmail.com</a></p>
+    <p>Phone: <a href="tel:123-456-7891">123-456-7891</a></p>
+    
+    <div class="footer-contact">
+        <a href="index.html">Home</a> | 
+        <a href="one.html">Toronto FC</a> | 
+        <a href="two.html">Vancouver Whitecaps</a> | 
+        <a href="three.html">CF Montreal</a> | 
+        <a href="Work Cited - A3 (CIS 1050) - Harishan Thilakanathan (1274198).pdf" download>Work Cited</a> | 
+        <a href="404.html">More</a>
+    </div>
+</div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!-- By: Harishan Thilakanathan(1274198) -->
+<!-- Email: hthilaka@uoguelph.ca -->
+<!-- Purpose: Assignment 3 (CIS 1050) -->
+
+<!-- Date: Monday, April 8, 2024 -->
+
+<!-- WORD COUNT: 1300+ Words in this website as a whole -->
+
+<!-- Website is about the 3 different Canadian soccer teams in the MLS (Major League Soccer) -->
+
+<!-- FILENAME: home.html-->
+
+<!------------------------------------------------------------------------------->
+
+<!--this is a declaration, that tells the web browser that this is HTML5-->
+<!DOCTYPE html>
+<!-- TAG to indicate that this is the beggeineg of html document-->
+<html lang="en">
+   
+
+<html>
+
+<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>cMLS</title>
+        <link rel="stylesheet" href="webstyle.css" >
+    </head>
+
+    
+
+<!--TOP MENU-->
+
+    <header class="main-header">
+        <div class="header-container">
+        <img src="images/newLogo.png" alt="cMLS Logo" class="header-logo">
+        <nav class="desktop">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#">Teams ▾</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="one.html">Toronto FC</a></li>
+                    <li><a href="two.html">Vancouver Whitecaps</a></li>
+                    <li><a href="three.html">CF Montreal</a></li>
+                  </ul>
+                </li>
+                <li><a href="search.html">Search Player</a></li>
+                <li><a href="#section4">Contact</a></li>
+            </ul>
+              
+        </nav>
+
+
+
+
+
+        <!-- Hamburger Toggle Button -->
+        <button class="hamburger" onclick="toggleMobileNav()">
+            ☰
+        </button>
+
+        <!-- Mobile Navigation (hidden by default) -->
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li class="mobile-dropdown">
+                <a href="#" class="dropdown-toggle">Teams <span class="dropdown-arrow"></span></a>
+                <ul class="mobile-dropdown-menu">
+                <li><a href="one.html">Toronto FC</a></li>
+                <li><a href="two.html">Vancouver Whitecaps</a></li>
+                <li><a href="three.html">CF Montreal</a></li>
+                </ul>
+            </li>
+            <li><a href="search.html">Search Player</a></li>
+            <li><a href="#section4">Contact</a></li>
+            </ul>
+        </nav>
+
+
+
+
+
+        </div>
+    </header>
+
+
+    <script>
+        function toggleMobileNav() {
+          const nav = document.querySelector('.mobile-nav');
+          nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        }
+      
+        // Handle dropdown toggle
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+          toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.closest('.mobile-dropdown');
+            parent.classList.toggle('open');
+          });
+        });
+      </script>
+  
+
+    
+
+
+    <div class="introMoto">
+
+        <h1>Canada Soccer Lives Here! </h1>
+
+    </div>
+
+
+    <!--Team logos on the home page-->
+   
+
+    <section class="teamLogos">
+        
+        <div class="team-logo">
+          <img src="images/tfcLogo.png" alt="Toronto FC" />
+          <p>Toronto FC</p>
+        </div>
+        <div class="team-logo">
+          <img src="images/vancLogo.png" alt="Vancouver Whitecaps" />
+          <p>Vancouver Whitecaps</p>
+        </div>
+        <div class="team-logo">
+          <img src="images/montLogo.png" alt="CF Montréal" />
+          <p>CF Montréal</p>
+        </div>
+
+      </section>
+      
+
+
+    <!--The cMLS text on the home page-->
+
+
+    <section class="about-section">
+
+        <div class="about-content">
+
+          <div class="about-text">
+            <h2>cMLS</h2>
+
+            <p>As one of my hobbies is to play and watch soccer, this website will be<br> based on one of the leagues I watch. This website will be used to<br> explore all three of the Canadian teams in Major League Soccer (MLS).<br> I wanted to create a website that could show and talk more about<br> Canadian soccer, and this is just the start. “cMLS” is basically the<br> Canadian teams in Major League Soccer, which can be shown by the<br> unique logo as well. </p>
+
+            
+            <p>The MLS was founded in 1993, and their first season was played in<br> 1996. The league first started with only 10 teams, but now it has<br> grown to 29 teams as the popularity of soccer in the United States<br> and Canada keeps on growing. The MLS is a professional soccer<br> league comprising 29 teams, of which 26 are from the United States<br> of America and 3 are from Canada. This website will be covering the<br> three teams from Canada. The three teams are Toronto FC, the<br> Vancouver Whitecaps, and CF Montreal, formerly known as the<br> Montreal Impact.</p>
+
+          </div>
+
+          <div class="about-image">
+            <img src="images/newLogo.png" alt="cMLS Logo" />
+          </div>
+
+        </div>
+
+    </section>
+      
+
+    
+   
+    
+
+
+    <!--FOOTER-->
+    <div class="footer">
+        <img src="images/newLogo.png" alt="Logo" class="footer-logo"> <!-- Optional logo -->
+        
+        <h1>Contact Info</h1>
+        <p>Created By: Harishan Thilakanathan</p>
+    
+        
+        <div class="footer-contact">
+            <a href="index.html">Home</a> | 
+            <a href="one.html">Toronto FC</a> | 
+            <a href="two.html">Vancouver Whitecaps</a> | 
+            <a href="three.html">CF Montreal</a> | 
+            <a href="Work Cited - A3 (CIS 1050) - Harishan Thilakanathan (1274198).pdf" download>Work Cited</a> | 
+            <a href="404.html">More</a>
+        </div>
+    </div>
+
+
+    <!--<script src="app.js"></script>-->
+    
+</body>
+
+</html>

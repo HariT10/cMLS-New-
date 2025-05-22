@@ -1,0 +1,519 @@
+/* By: Harishan Thilakanathan(1274198) */
+/* Email: hthilaka@uoguelph.ca */
+/* Purpose: Assignment 3 (CIS 1050) */
+
+/* Date: Monday, April 8, 2024 */
+
+/* WORD COUNT: 1300+ Words in this website as a whole */
+
+/* Website is about the 3 different Canadian soccer teams in the MLS (Major League Soccer) */
+
+/* FILENAME: webstyle.css */
+
+/*---------------------------------------------------------------------------------------------*/
+
+body{
+    background-color: #F0FFFF;
+    background-image: url(4907157.jpg);
+    background-size: 100% auto;
+    background-attachment: fixed;
+    overflow: auto;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* PICUTRE */
+
+.image1{
+  width: 300px;
+  height: 200px;
+}
+
+
+.logo img{
+  width: 290px;
+  height: 280px;
+  margin-top: -175px;
+
+}
+
+
+
+.main-header {
+  /*background-color: #FFFAF0; */
+  /*background-color: #E0FFFF;*/
+  /*background-color: #FFFFE0;*/
+  background-color: #F5FFFA;
+  /*background-color: #FFFAFA;*/
+  /*background-color: #F5F5F5;*/
+  padding: 0; /* remove vertical padding */
+  height: 100px; /* fixed header height */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+
+  
+}
+
+.header-container {
+  max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-logo {
+  height: 230px; /* increase for bigger logo */
+  max-height: 100%; /* keep it within header height */
+  width: auto;
+  object-fit: contain;
+}
+
+.site-tagline {
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFAF0;
+  white-space: nowrap;
+  line-height: 1; /* fix vertical spacing */
+}
+
+
+
+.nav-list {
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  position: relative; /* Needed for dropdown to anchor */
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  padding: 10px 15px;
+  display: block;
+}
+
+/* Hide dropdown menu by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 999;
+}
+
+/* Show when hovering over the parent li */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown item styling */
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  padding: 10px 15px;
+  color: #000;
+  transition: background 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+/*----------------------------------------------------------------*/
+
+
+/*Quote and three teams logos on top of Home Page*/
+
+.introMoto{
+
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  margin-top: -50px;
+  margin-left: 600px;
+  font-size: 10px;
+
+}
+
+
+.teamLogos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.team-logo {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-logo img {
+  width: 180px;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+.team-logo:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.team-logo p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', sans-serif;
+}
+
+
+/*----------------------------------------------------------------*/
+
+
+/* The Block of text and the logo beside eachother on the Home screen */
+
+.about-section {
+  padding: 60px 30px;
+  background-color: #f7f7f7;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+  min-width: 250px;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+/*----------------------------------------------------------------*/
+
+
+/*The links Above the Footer*/
+
+.footerHeader {
+  margin-top: 200px;
+  margin-left: 100px;
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+
+}
+
+.footerHeader ul {
+  list-style: none; 
+  padding: 0; 
+  display: flex; 
+  font-weight: bold;
+}
+
+.footerHeader li{
+  list-style-type: none;
+  
+}
+
+.footerHeader ul li {
+  margin-right: 150px; 
+}
+
+.footerHeader ul li a {
+  text-decoration: none; 
+  color: black; 
+}
+
+/*-------------------------------------------------------------------------------------------*/
+
+/* General Footer Styling */
+.footer {
+  margin-top: 100px;
+  height: auto; /* Allow content to dictate height */
+  padding: 20px 16px; /* Add padding for spacing */
+  background: #F5FFFA;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  border-top: 2px solid #e0e0e0; /* Add a subtle border on top */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Footer Heading */
+.footer h1 {
+  color: black;
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  font-size: 24px; /* Adjust font size */
+  text-align: center; /* Center text */
+  margin-bottom: 10px; /* Space below heading */
+  letter-spacing: 1px; /* Add letter spacing */
+}
+
+/* Footer Text */
+.footer p {
+  color: black;
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  font-size: 16px; /* Adjust font size */
+  text-align: center; /* Center text */
+  margin: 0; /* Remove extra spacing */
+  letter-spacing: 0.5px; /* Add subtle spacing */
+}
+
+/* Footer Links */
+.footer-contact a {
+  color: black; /* Match link color with text */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-contact a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Footer Logo */
+.footer-logo {
+  width: 170px; /* Adjust based on your logo size */
+  margin-bottom: 10px; /* Space below logo */
+}
+
+/* Contact Section */
+.footer-contact {
+  margin-top: 10px; /* Space between sections */
+  text-align: center; /* Center text */
+
+
+
+}
+
+
+
+.hamburger,
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav.open {
+  display: block;
+}
+
+.mobile-nav-list a {
+  display: none;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  
+  .desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 70px; /* just below the header */
+    right: 20px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    width: 220px;
+    z-index: 999;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-nav-list li {
+    margin: 10px 0;
+  }
+
+  .mobile-nav-list li:last-child {
+    border-bottom: none;
+  }
+  
+
+  .mobile-nav-list a {
+    display: block;
+    padding: 12px 20px;
+    color: #111;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+
+  .mobile-nav-list a:hover {
+    background-color: #f5f5f5;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  /* Optional: slight arrow animation */
+  .dropdown-toggle::after {
+    content: "▾";
+    margin-left: 6px;
+    font-size: 12px;
+  }
+
+  .mobile-dropdown-menu {
+    display: none;
+    padding-left: 20px;
+  }
+
+  .mobile-dropdown.open .mobile-dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-toggle {
+    cursor: pointer;
+  }
+
+
+  
+  /* Intro quote */
+  .introMoto {
+    margin-left: 0;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  /* Team Logos - stack better */
+  .team-logo img {
+    width: 120px;
+  }
+
+  .team-logo p {
+    font-size: 14px;
+  }
+
+  /* About Section */
+  .about-section {
+    padding: 30px 20px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-text h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* Footer Header (above footer links) */
+  .footerHeader {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .footerHeader ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerHeader ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  /* Footer */
+  .footer h1 {
+    font-size: 20px;
+  }
+
+  .footer p, .footer a {
+    font-size: 14px;
+  }
+
+  .footer-logo {
+    width: 130px;
+  }
+
+}

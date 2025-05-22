@@ -1,0 +1,461 @@
+/* By: Harishan Thilakanathan(1274198) */
+/* Email: hthilaka@uoguelph.ca */
+/* Purpose: Assignment 3 (CIS 1050) */
+
+/* Date: Monday, April 8, 2024 */
+
+/* WORD COUNT: 1300+ Words in this website as a whole */
+
+/* Website is about the 3 different Canadian soccer teams in the MLS (Major League Soccer) */
+
+/* FILENAME: webstyle.css */
+
+/*---------------------------------------------------------------------------------------------*/
+
+
+body{
+    background-color: #F0FFFF;
+    background-image: url(4907157.jpg);
+    background-size: 100% auto;
+    background-attachment: fixed;
+    overflow: auto;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.main-header {
+  background-color: #F5FFFA;
+  padding: 0; /* remove vertical padding */
+  height: 100px; /* fixed header height */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-logo {
+  height: 230px; /* increase for bigger logo */
+  max-height: 100%; /* keep it within header height */
+  width: auto;
+  object-fit: contain;
+}
+
+.site-tagline {
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFAF0;
+  white-space: nowrap;
+  line-height: 1; /* fix vertical spacing */
+}
+
+
+
+.nav-list {
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  position: relative; /* Needed for dropdown to anchor */
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  padding: 10px 15px;
+  display: block;
+}
+
+/* Hide dropdown menu by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 999;
+}
+
+/* Show when hovering over the parent li */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown item styling */
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  padding: 10px 15px;
+  color: #000;
+  transition: background 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+/* General Footer Styling */
+.footer {
+  margin-top: 550px;
+  height: auto; /* Allow content to dictate height */
+  padding: 20px 16px; /* Add padding for spacing */
+  background: #F5FFFA;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  border-top: 2px solid #e0e0e0; /* Add a subtle border on top */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Footer Heading */
+.footer h1 {
+  color: black;
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  font-size: 24px; /* Adjust font size */
+  text-align: center; /* Center text */
+  margin-bottom: 10px; /* Space below heading */
+  letter-spacing: 1px; /* Add letter spacing */
+}
+
+/* Footer Text */
+.footer p {
+  color: black;
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  font-size: 16px; /* Adjust font size */
+  text-align: center; /* Center text */
+  margin: 0; /* Remove extra spacing */
+  letter-spacing: 0.5px; /* Add subtle spacing */
+}
+
+/* Footer Links */
+.footer-contact a {
+  color: black; /* Match link color with text */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-contact a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Footer Logo */
+.footer-logo {
+  width: 170px; /* Adjust based on your logo size */
+  margin-bottom: 10px; /* Space below logo */
+}
+
+/* Contact Section */
+.footer-contact {
+  margin-top: 10px; /* Space between sections */
+  text-align: center; /* Center text */
+}
+
+
+/*SEARCH PLAYER ---------------------------------*/
+.searchText {
+    text-align: center;
+    margin-top: 80px;
+    font-family: Avenir, Montserrat, sans-serif;
+  }
+  
+  .searchText h1 {
+    font-size: 32px;
+    color: #111;
+  }
+  
+  .searchPlayer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  
+  #playerName {
+    width: 280px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  #playerName:focus {
+    border-color: #007bff;
+  }
+  
+  button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  #result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .player-card {
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    font-family: Avenir, Montserrat, sans-serif;
+  }
+  
+  .player-card h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #007bff;
+  }
+  
+  .player-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .player-card ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .player-image {
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .hamburger,
+  .mobile-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+  
+  .mobile-nav.open {
+    display: block;
+  }
+
+  .mobile-nav-list a {
+    display: none;
+  }
+
+  
+  
+
+/*
+.player{
+  margin-top: 100px;
+  margin-left: 10000px
+}
+*/
+
+/*---------------------------------------------------------------------------------------------*/
+
+@media (max-width: 768px) {
+
+    .desktop {
+        display: none;
+      }
+    
+      .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+        margin-left: auto;
+      }
+    
+      .mobile-nav {
+        position: absolute;
+        top: 70px; /* just below the header */
+        right: 20px;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        padding: 10px 0;
+        width: 220px;
+        z-index: 999;
+        transition: all 0.3s ease;
+      }
+    
+      .mobile-nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    
+      .mobile-nav-list li {
+        margin: 10px 0;
+      }
+
+      .mobile-nav-list li:last-child {
+        border-bottom: none;
+      }
+      
+    
+      .mobile-nav-list a {
+        display: block;
+        padding: 12px 20px;
+        color: #111;
+        text-decoration: none;
+        font-size: 16px;
+        transition: background 0.3s ease;
+      }
+
+      .mobile-nav-list a:hover {
+        background-color: #f5f5f5;
+        border-radius: 0 8px 8px 0;
+      }
+      
+      /* Optional: slight arrow animation */
+      .dropdown-toggle::after {
+        content: "▾";
+        margin-left: 6px;
+        font-size: 12px;
+      }
+    
+      .mobile-dropdown-menu {
+        display: none;
+        padding-left: 20px;
+      }
+    
+      .mobile-dropdown.open .mobile-dropdown-menu {
+        display: block;
+      }
+    
+      .dropdown-toggle {
+        cursor: pointer;
+      }
+    
+
+    .header-logo{
+        height: 130px;
+    }
+  
+    /* SEARCH SECTION */
+    .searchText h1 {
+      font-size: 24px;
+    }
+  
+    #playerName {
+      width: 90%;
+      font-size: 14px;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 10px 16px;
+    }
+  
+    .searchPlayer {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .player-card {
+      padding: 20px;
+      max-width: 90%;
+    }
+  
+    .player-card h2 {
+      font-size: 22px;
+    }
+  
+    .player-card ul li {
+      font-size: 14px;
+    }
+  
+    .player-image {
+      width: 140px;
+    }
+  
+    /* FOOTER */
+    .footer {
+      padding: 20px 10px;
+    }
+  
+    .footer h1 {
+      font-size: 20px;
+    }
+  
+    .footer p,
+    .footer a {
+      font-size: 14px;
+    }
+  
+    .footer-logo {
+      width: 120px;
+    }
+  
+    .footer-contact {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+  }
+  

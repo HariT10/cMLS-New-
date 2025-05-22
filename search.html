@@ -1,0 +1,264 @@
+<!-- By: Harishan Thilakanathan(1274198) -->
+<!-- Email: hthilaka@uoguelph.ca -->
+<!-- Purpose: Assignment 3 (CIS 1050) -->
+
+<!-- Date: Monday, April 8, 2024 -->
+
+<!-- WORD COUNT: 1300+ Words in this website as a whole -->
+
+<!-- Website is about the 3 different Canadian soccer teams in the MLS (Major League Soccer) -->
+
+<!-- FILENAME: home.html-->
+
+<!------------------------------------------------------------------------------->
+
+<!--this is a declaration, that tells the web browser that this is HTML5-->
+<!DOCTYPE html>
+<!-- TAG to indicate that this is the beggeineg of html document-->
+<html lang="en">
+   
+
+<html>
+
+<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>cMLS</title>
+        <link rel="stylesheet" href="search.css" >
+    </head>
+
+    
+
+<!--TOP MENU-->
+
+    <header class="main-header">
+        <div class="header-container">
+        <img src="images/newLogo.png" alt="cMLS Logo" class="header-logo">
+        <nav class="desktop">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#">Teams ▾</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="one.html">Toronto FC</a></li>
+                    <li><a href="two.html">Vancouver Whitecaps</a></li>
+                    <li><a href="three.html">CF Montreal</a></li>
+                  </ul>
+                </li>
+                <li><a href="#search.html">Search Player</a></li>
+                <li><a href="#section4">Contact</a></li>
+            </ul>
+              
+        </nav>
+
+
+
+
+        <!-- Hamburger Toggle Button -->
+        <button class="hamburger" onclick="toggleMobileNav()">
+            ☰
+        </button>
+
+        <!-- Mobile Navigation (hidden by default) -->
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li class="mobile-dropdown">
+                <a href="#" class="dropdown-toggle">Teams <span class="dropdown-arrow">▾</span></a>
+                <ul class="mobile-dropdown-menu">
+                <li><a href="one.html">Toronto FC</a></li>
+                <li><a href="two.html">Vancouver Whitecaps</a></li>
+                <li><a href="three.html">CF Montreal</a></li>
+                </ul>
+            </li>
+            <li><a href="search.html">Search Player</a></li>
+            <li><a href="#section4">Contact</a></li>
+            </ul>
+        </nav>
+
+
+
+        </div>
+    </header>
+
+
+    <script>
+        function toggleMobileNav() {
+          const nav = document.querySelector('.mobile-nav');
+          nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        }
+      
+        // Handle dropdown toggle
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+          toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.closest('.mobile-dropdown');
+            parent.classList.toggle('open');
+          });
+        });
+      </script>
+  
+
+    
+
+
+    <div class="introMoto">
+
+        <h1>Canada Soccer Lives Here! </h1>
+
+    </div>
+
+
+    <div class = "searchText">
+        <h1>Search MLS Player</h1>
+    </div>
+
+
+    <div class = "searchPlayer">
+
+        <input type="text" id="playerName" placeholder="Enter Player">
+
+        <button onclick="searchPlayer()">Search</button><br>
+
+
+        <!--<img src="" alt="Player Search" id = "playerSearch" style = "display: none">-->
+
+    </div>
+
+    <div id="result" ></div>
+
+
+
+    
+
+    <script>
+
+        let players = [];
+
+        async function readCSV(){
+
+
+            try{
+
+                const response = await fetch("MLS STATS - Sheet1.csv");
+                const data = await response.text();
+
+                const row = data.split("\n");
+
+                const head = row[0].split(",");
+
+                players = row.slice(1).map(row => {
+
+                    const values = row.split(",");
+
+                    if (values.length !== head.length) return null; // Skip malformed rows
+
+                    const player = {};
+
+                    head.forEach((head, index) => {
+                        player[head.trim()] = values[index]?.trim();
+
+                    });
+
+                    return player;
+
+
+                }).filter(player => player !== null);
+
+                console.log("Loaded CSV data:", players); // Debugging log
+
+            } catch(e){
+
+            }
+
+
+
+        }
+
+
+        function searchPlayer(){
+
+            //the player name entered by the user 
+            const playerName = document.getElementById("playerName").value.trim().toLowerCase();
+
+
+            const resultDiv = document.getElementById("result");
+
+            // Check if players array is loaded
+            if (!players || players.length === 0) {
+                resultDiv.innerText = "Player data is still loading. Please try again.";
+                return;
+            }
+
+
+            // Split playerName into first and last name (if both provided)
+            const nameParts = playerName.split(" ");
+
+            // Search for the player based on either the first or last name
+            const result = players.find(player => {
+                const fullName = player["Player"] ? player["Player"].toLowerCase() : "";
+                
+                // Check if the player's name contains either part of the entered name
+                return nameParts.every(part => fullName.includes(part));
+            });
+
+
+            if (result) {
+                resultDiv.innerHTML = `
+                    <div class="player-card">
+                        <h2>${result["Player"]}</h2>
+                        <img src="${result["Image"]}" alt="${result["Player"]}" class="player-image">
+                        <ul>
+                        <li><strong>Club:</strong> ${result["Club"]}</li>
+                        <li><strong>Games Played:</strong> ${result["GP"]}</li>
+                        <li><strong>Goals Scored:</strong> ${result["GS"]}</li>
+                        <li><strong>Minutes:</strong> ${result["Mins"]}</li>
+                        </ul>
+                    </div>
+                `;
+
+            } else {
+                resultDiv.innerHTML = "Player not found.";
+            }
+
+
+
+        }
+        
+        document.addEventListener("DOMContentLoaded", readCSV);
+
+
+
+    </script>
+    
+   
+    
+
+
+    <!--FOOTER-->
+    <div class="footer">
+        <img src="images/cMLSLogo.png" alt="Logo" class="footer-logo"> <!-- Optional logo -->
+        
+        <h1>Contact Info</h1>
+        <p>Created By: Harishan Thilakanathan</p>
+    
+        
+        <div class="footer-contact">
+            <a href="index.html">Home</a> | 
+            <a href="one.html">Toronto FC</a> | 
+            <a href="two.html">Vancouver Whitecaps</a> | 
+            <a href="three.html">CF Montreal</a> | 
+            <a href="Work Cited - A3 (CIS 1050) - Harishan Thilakanathan (1274198).pdf" download>Work Cited</a> | 
+            <a href="404.html">More</a>
+        </div>
+    </div>
+
+
+    <!--<script src="app.js"></script>-->
+    
+</body>
+
+</html>
